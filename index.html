@@ -1,3 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset='UTF-8'>
+  <title>Open Statistics - Confidence Interval and Hypothesis Testing Summary</title>
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+  <link href="stylesheets/sticky-footer.css" rel="stylesheet">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"> </script>
+  <script type="text/javascript">
+    /*
+    Function based on code from
+    https://github.com/mathjax/MathJax/issues/182
+*/
+
+    function isMathMLNativelySupported() {
+      var hasMathML = false;
+      if (document.createElement) {
+        var div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.top = div.style.left = 0;
+        div.style.visibility = "hidden";
+        div.style.width = div.style.height = "auto";
+        div.style.fontFamily = "serif";
+        div.style.lineheight = "normal";
+        div.innerHTML = "<math><mfrac><mi>xx</mi><mi>yy</mi></mfrac></math>";
+        $("body").append(div);
+        hasMathML = div.offsetHeight > div.offsetWidth;
+      }
+      return hasMathML;
+    }
+
+    function setupMathjaxIfNeeded() {
+      if (isMathMLNativelySupported())
+        return true;
+      var scriptMathJax = document.createElement("script");
+      scriptMathJax.type = "text/javascript";
+      scriptMathJax.src = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      $("head").append(scriptMathJax);
+      return false;
+    }
+    $(document).ready(function() {
+      setupMathjaxIfNeeded();
+    });
+  </script>
+</head>
+
+
+<body>
 <!--Begin body here --> 
 <a href='https://smart-pension-1.workable.com/j/FCE6A167BE'>Smart Pension Ltd - Jobs: Contract Data Platform Engineer - Apply ...</a><br> 
 Nov 15, 2018 ... Prior experience as a Data Scientist or Data Analyst. Experience in financial or 
@@ -46,3 +102,4 @@ NY.<br/><hr/><a href='https://boards.greenhouse.io/sonyinteractiveentertainmentp
 Data Engineer (Contract) San Diego, CA. IT Helpdesk Support (Contract)<br/><hr/>
 
 <!--End body here -->
+</body>
