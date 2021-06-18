@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<meta name='description' content='{{title}}'>
+	<meta http-equiv='content-language' content='en-us'> 
+</head>
+<body>
+<style>
+
+ td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+      }
+</style>
+<a href="/">Home</a>
+<h1>{{heading}}</h1>
+<table>
+  <thead>
+    <tr>
+        <th>Job Posting</th>
+        <th>Posted On</th>
+        <th>Posted By</th>
+	<th>Job Application</th>
+    </tr>
+    </thead>
+    <tbody>
+     {% for row in data %}
+            <tr>
+                <td><a href="{{row[4]}}">{{row[0]}}</a></td>
+                <td>{{row[2]}}</td>
+		<td><a href="https://twitter.com/{{row[3]}}">{{row[3]}}</a></td>
+		<td><a href="{{row[1]}}">Apply here</a></td>
+
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br/><br/>
+<a href="/">Home</a>
+
+</body>
