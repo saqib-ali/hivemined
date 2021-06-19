@@ -12,7 +12,23 @@ DBCONNSTR=os.environ['DBCONNSTR']
 #postgres://{username}:{password}@free-tier4.aws-us-west-2.cockroachlabs.cloud:26257/{clustername}.defaultdb?sslmode=require
 
 
-job_site_patterns = "\"postUrl\" LIKE '%greenhouse%' OR \"postUrl\" LIKE '%lever.co%' OR \"postUrl\" LIKE '%lever.co%' OR \"postUrl\" LIKE '%recruiterbox.com%' OR \"postUrl\" LIKE '%jobvite.com%' OR \"postUrl\" LIKE '%applytojob.com%' OR \"postUrl\" LIKE '%careerarc.com%' OR \"postUrl\" LIKE '%smartrecruiters.com%' OR \"postUrl\" LIKE '%recruitee.com%' OR \"postUrl\" LIKE '%jobscore.com%' OR \"postUrl\" LIKE '%work4labs.com%' OR \"postUrl\" LIKE '%jobs.ac.uk%' OR \"postUrl\" LIKE '%workable.com%' OR \"postUrl\" LIKE '%brassring.com%' OR \"postUrl\" LIKE '%softgarden.com%' OR \"postUrl\" LIKE '%jobarxiv.org%'"
+job_site_patterns = """\"postUrl\" LIKE '%greenhouse%' 
+    OR \"postUrl\" LIKE '%lever.co%' 
+    OR \"postUrl\" LIKE '%ultipro.com%' 
+    OR \"postUrl\" LIKE '%avature.net%' 
+    OR \"postUrl\" LIKE '%recruiterbox.com%' 
+    OR \"postUrl\" LIKE '%jobvite.com%' 
+    OR \"postUrl\" LIKE '%applytojob.com%' 
+    OR \"postUrl\" LIKE '%careerarc.com%' 
+    OR \"postUrl\" LIKE '%smartrecruiters.com%' 
+    OR \"postUrl\" LIKE '%recruitee.com%' 
+    OR \"postUrl\" LIKE '%jobscore.com%' 
+    OR \"postUrl\" LIKE '%work4labs.com%' 
+    OR \"postUrl\" LIKE '%jobs.ac.uk%' 
+    OR \"postUrl\" LIKE '%workable.com%' 
+    OR \"postUrl\" LIKE '%brassring.com%' 
+    OR \"postUrl\" LIKE '%softgarden.com%' 
+    OR \"postUrl\" LIKE '%jobarxiv.org%'"""
 
 
 @app.route('/')
