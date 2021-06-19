@@ -1,3 +1,3 @@
-This app is hosted on DigitalOcean App Platform.
+This demo app is hosted on DigitalOcean App Platform.
 
-The database is CockrockCloud
+CockroachCloud is the database for this app.
