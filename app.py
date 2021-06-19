@@ -90,7 +90,6 @@ def feed():
 #        fe.pubdate(dateposted)
 #        fe.pubDate(dateposted)
 #        fe.updated(post[2])
-#        fe.author('Saqib Ali')
 
 
 
