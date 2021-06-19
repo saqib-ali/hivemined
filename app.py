@@ -28,7 +28,12 @@ job_site_patterns = """\"postUrl\" LIKE '%greenhouse%'
     OR \"postUrl\" LIKE '%jobs.ac.uk%' 
     OR \"postUrl\" LIKE '%workable.com%' 
     OR \"postUrl\" LIKE '%brassring.com%' 
-    OR \"postUrl\" LIKE '%softgarden.com%' 
+    OR \"postUrl\" LIKE '%softgarden.com%'
+    OR \"postUrl\" LIKE '%careers.%.edu%' 
+    OR \"postUrl\" LIKE '%jobs.%.edu%' 
+    OR \"postUrl\" LIKE '%careers.%.ac.%' 
+    OR \"postUrl\" LIKE '%jobs.%.ac.%' 
+
     OR \"postUrl\" LIKE '%jobarxiv.org%'"""
 
 
