@@ -65,7 +65,7 @@ def post(post_id):
 @app.route('/feed')
 def feed():
 
-    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''), rowid FROM openstatistics.rssitems WHERE ("  + job_site_patterns + " ) AND starred=1  ORDER BY TIME DESC LIMIT 100" 
+    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''), rowid FROM openstatistics.rssitems WHERE ("  + job_site_patterns + " ) AND starred=1  ORDER BY TIME DESC LIMIT 10" 
     try:
         conn = psycopg2.connect(DBCONNSTR)
         print("connected")
