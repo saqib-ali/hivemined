@@ -36,7 +36,7 @@ job_site_patterns = """\"postUrl\" LIKE '%greenhouse%'
     OR \"postUrl\" LIKE '%jobarxiv.org%'"""
 
 job_site_patterns = """
-    OR \"postUrl\" LIKE '%careers.%.edu%' 
+    \"postUrl\" LIKE '%careers.%.edu%' 
     OR \"postUrl\" LIKE '%jobs.%.edu%' 
     OR \"postUrl\" LIKE '%careers.%.ac.%' 
     OR \"postUrl\" LIKE '%jobs.%.ac.%' 
