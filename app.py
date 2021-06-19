@@ -49,7 +49,7 @@ def index():
     conn.close()
 
 
-    return render_template('index.html', data=data, title="HiveMined - The no non-sense Job Board", heading="HiveMined - The no non-sense Job Board")
+    return render_template('index.html', data=data, title="HiveMined - The No-Nonsense Job Board", heading="HiveMined - The No-Nonsense Job Board")
 
 
 @app.route('/<post_id>')
