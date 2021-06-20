@@ -14,10 +14,31 @@ DBCONNSTR=os.environ['DBCONNSTR']
 
 
 job_site_patterns = """
+    
     \"postUrl\" LIKE '%careers.%.edu%' 
     OR \"postUrl\" LIKE '%jobs.%.edu%' 
+    OR \"postUrl\" LIKE '%opportunities.%.edu%' 
+    OR \"postUrl\" LIKE '%employment.%.edu%' 
+
+    
     OR \"postUrl\" LIKE '%careers.%.ac.%' 
     OR \"postUrl\" LIKE '%jobs.%.ac.%' 
+    OR \"postUrl\" LIKE '%opportunities.%.ac.%' 
+    OR \"postUrl\" LIKE '%employement.%.ac.%' 
+
+    
+    OR \"postUrl\" LIKE '%.ac.%/jobs%' 
+    OR \"postUrl\" LIKE '%.ac.%/careers%'
+    OR \"postUrl\" LIKE '%.ac.%/Vacanc%' 
+
+    OR \"postUrl\" LIKE '%.edu.%/jobs%' 
+    OR \"postUrl\" LIKE '%.edu.%/careers%' 
+    OR \"postUrl\" LIKE '%.edu.%/Vacanc%' 
+    
+    OR \"postUrl\" LIKE '%.edu/jobs%' 
+    OR \"postUrl\" LIKE '%.edu/careers%' 
+    OR \"postUrl\" LIKE '%.edu/Vacanc%' 
+
     """
 
 
