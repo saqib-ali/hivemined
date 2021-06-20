@@ -101,7 +101,7 @@ def feed():
     mycursor.close()
     conn.close()
     db_end_time = time.time()
-    logging.info('DB SELECT time:' +  db_end_time-db_start_time)
+    logging.info('DB SELECT time:' +  str(db_end_time-db_start_time))
 
     fg = FeedGenerator()
     fg.title('HiveMined - The No-nonsense Job Board')
