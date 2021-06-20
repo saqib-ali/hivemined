@@ -4,6 +4,9 @@ from feedgen.feed import FeedGenerator
 from datetime import datetime
 import pytz
 import os
+import time
+import logging
+
 
 app = Flask(__name__)
 DBCONNSTR=os.environ['DBCONNSTR']
@@ -85,7 +88,7 @@ def post(post_id):
 
 @app.route('/feed')
 def feed():
-
+    db_start_time = time.time()
     sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''), rowid FROM openstatistics.rssitems WHERE ("  + job_site_patterns + " ) AND starred=1  ORDER BY TIME DESC LIMIT 5" 
     try:
         conn = psycopg2.connect(DBCONNSTR)
@@ -97,7 +100,8 @@ def feed():
     posts = mycursor.fetchall()
     mycursor.close()
     conn.close()
-
+    db_end_time = time.time()
+    logging.info('DB SELECT time:' +  db_end_time-db_start_time)
 
     fg = FeedGenerator()
     fg.title('HiveMined - The No-nonsense Job Board')
