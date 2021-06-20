@@ -27,16 +27,16 @@ job_site_patterns = """
     OR \"postUrl\" LIKE '%employement.%.ac.%' 
 
     
-    OR \"postUrl\" LIKE '%.ac.%/jobs%' 
-    OR \"postUrl\" LIKE '%.ac.%/careers%'
+    OR \"postUrl\" LIKE '%.ac.%/job%' 
+    OR \"postUrl\" LIKE '%.ac.%/career%'
     OR \"postUrl\" LIKE '%.ac.%/Vacanc%' 
 
-    OR \"postUrl\" LIKE '%.edu.%/jobs%' 
-    OR \"postUrl\" LIKE '%.edu.%/careers%' 
+    OR \"postUrl\" LIKE '%.edu.%/job%' 
+    OR \"postUrl\" LIKE '%.edu.%/career%' 
     OR \"postUrl\" LIKE '%.edu.%/Vacanc%' 
     
-    OR \"postUrl\" LIKE '%.edu/jobs%' 
-    OR \"postUrl\" LIKE '%.edu/careers%' 
+    OR \"postUrl\" LIKE '%.edu/job%' 
+    OR \"postUrl\" LIKE '%.edu/career%' 
     OR \"postUrl\" LIKE '%.edu/Vacanc%' 
 
     """
