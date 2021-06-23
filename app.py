@@ -53,8 +53,8 @@ def index():
     try:
         conn = psycopg2.connect(DBCONNSTR)
         print("connected" )
-    except:
-        print ("I am unable to connect to the database" )
+    except Exception as e:
+        print ("I am unable to connect to the database" + e )
     mycursor =conn.cursor()
     mycursor.execute(sql_stmt)
     data = mycursor.fetchall()
