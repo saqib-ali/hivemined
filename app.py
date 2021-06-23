@@ -55,7 +55,7 @@ def index():
         conn = psycopg2.connect(DBCONNSTR)
         print("connected" )
     except Exception as e:
-        print ("I am unable to connect to the database" + e )
+        print ("I am unable to connect to the database" + DBCONNSTR + e )
     mycursor =conn.cursor()
     mycursor.execute(sql_stmt)
     data = mycursor.fetchall()
@@ -73,8 +73,8 @@ def post(post_id):
     try:
         conn = psycopg2.connect(DBCONNSTR)
         print("connected")
-    except:
-        print ("I am unable to connect to the database")
+    except Exception as e:
+        print ("I am unable to connect to the database" + DBCONNSTR + e )
     mycursor =conn.cursor()
     mycursor.execute(sql_stmt)
     data = mycursor.fetchall()
@@ -94,8 +94,8 @@ def feed():
     try:
         conn = psycopg2.connect(DBCONNSTR)
         print("connected")
-    except:
-        print ("I am unable to connect to the database")
+    except Exception as e:
+        print ("I am unable to connect to the database" + DBCONNSTR + e  )
     mycursor =conn.cursor()
     mycursor.execute(sql_stmt)
     posts = mycursor.fetchall()
