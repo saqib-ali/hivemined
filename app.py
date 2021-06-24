@@ -6,6 +6,7 @@ import pytz
 import os
 import time
 import logging
+from flask import send_from_directory
 
 
 app = Flask(__name__)
@@ -133,3 +134,7 @@ def feed():
 
     return fg.rss_str(pretty=True)
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static', 'images'),
+                               'favicon.ico', mimetype='image/png')
