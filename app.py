@@ -138,3 +138,9 @@ def feed():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static', 'images'),
                                'favicon.ico', mimetype='image/png')
+
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(os.path.join(app.root_path, 'static', 'text'),
+                               'robots.txt', mimetype='text/plain')                               
