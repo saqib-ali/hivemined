@@ -14,7 +14,14 @@ DBCONNSTR=os.environ['DBCONNSTR']
 #DBCONNSTR is set in the DigitalOcean App setting environment variable as:
 #postgres://{username}:{password}@{cockroachcloudhostname}:26257/{clustername}.{databasename}?sslmode=require
 #postgres://{username}:{password}@free-tier4.aws-us-west-2.cockroachlabs.cloud:26257/{clustername}.defaultdb?sslmode=require
-
+#ALTER TABLE openstatistics.rssitems
+#ADD COLUMN SHOW_ON_HIVEMINED INT AS 
+#(CASE 
+#WHEN "postUrl" LIKE '%careers.%.edu%' OR "postUrl" LIKE '%jobs.%.edu%'  OR "postUrl" LIKE '%opportunities.%.edu%'  OR "postUrl" LIKE '%employment.%.edu%' OR "postUrl" LIKE '%careers.%.ac.%' OR "postUrl" LIKE '%jobs.%.ac.%' OR "postUrl" LIKE '%opportunities.%.ac.%' OR "postUrl" LIKE '%employement.%.ac.%'  OR "postUrl" LIKE '%.ac.%/job%' OR "postUrl" LIKE '%.ac.%/career%' OR "postUrl" LIKE '%.ac.%/Vacanc%'  OR "postUrl" LIKE '%.edu.%/job%' OR "postUrl" LIKE '%.edu.%/career%'  OR "postUrl" LIKE '%.edu.%/Vacanc%' OR "postUrl" LIKE '%.edu/job%' OR "postUrl" LIKE '%.edu/career%'  OR "postUrl" LIKE '%.edu/Vacanc%' 
+#THEN 1
+#ELSE 0
+#END)
+#STORED;
 
 
 job_site_patterns = """
@@ -48,7 +55,7 @@ job_site_patterns = """
 
 @app.route('/')
 def index():
-    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''), rowid FROM openstatistics.rssitems WHERE (" + job_site_patterns + ") AND starred=1  ORDER BY TIME DESC LIMIT 10"
+    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''), rowid FROM openstatistics.rssitems WHERE show_on_hivemined=1 AND starred=1  ORDER BY TIME DESC LIMIT 10"
 
 
 
@@ -91,7 +98,7 @@ def post(post_id):
 @app.route('/feed')
 def feed():
     db_start_time = time.time()
-    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''), rowid FROM openstatistics.rssitems WHERE ("  + job_site_patterns + " ) AND starred=1  ORDER BY TIME DESC LIMIT 5" 
+    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''), rowid FROM openstatistics.rssitems WHERE show_on_hivemined=1 AND starred=1  ORDER BY TIME DESC LIMIT 5" 
     try:
         conn = psycopg2.connect(DBCONNSTR)
         print("connected")
