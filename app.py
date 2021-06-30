@@ -14,14 +14,7 @@ DBCONNSTR=os.environ['DBCONNSTR']
 #DBCONNSTR is set in the DigitalOcean App setting environment variable as:
 #postgres://{username}:{password}@{cockroachcloudhostname}:26257/{clustername}.{databasename}?sslmode=require
 #postgres://{username}:{password}@free-tier4.aws-us-west-2.cockroachlabs.cloud:26257/{clustername}.defaultdb?sslmode=require
-#ALTER TABLE openstatistics.rssitems
-#ADD COLUMN SHOW_ON_HIVEMINED INT AS 
-#(CASE 
-#WHEN "postUrl" LIKE '%careers.%.edu%' OR "postUrl" LIKE '%jobs.%.edu%'  OR "postUrl" LIKE '%opportunities.%.edu%'  OR "postUrl" LIKE '%employment.%.edu%' OR "postUrl" LIKE '%careers.%.ac.%' OR "postUrl" LIKE '%jobs.%.ac.%' OR "postUrl" LIKE '%opportunities.%.ac.%' OR "postUrl" LIKE '%employement.%.ac.%'  OR "postUrl" LIKE '%.ac.%/job%' OR "postUrl" LIKE '%.ac.%/career%' OR "postUrl" LIKE '%.ac.%/Vacanc%'  OR "postUrl" LIKE '%.edu.%/job%' OR "postUrl" LIKE '%.edu.%/career%'  OR "postUrl" LIKE '%.edu.%/Vacanc%' OR "postUrl" LIKE '%.edu/job%' OR "postUrl" LIKE '%.edu/career%'  OR "postUrl" LIKE '%.edu/Vacanc%' 
-#THEN 1
-#ELSE 0
-#END)
-#STORED;
+
 
 
 
