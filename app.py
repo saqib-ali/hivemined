@@ -86,6 +86,8 @@ def feed():
     for post in posts:
         format = "%Y-%m-%d %H:%M:%S"
 
+        tz = pytz.timezone('Europe/Amsterdam')
+        fe.pubDate(tz.localize(post[2]))
 #        tz = pytz.timezone('Asia/Kolkata')
 #        dateposted = post[2].astimezone(tz) 
 
