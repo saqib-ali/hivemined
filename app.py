@@ -87,7 +87,6 @@ def feed():
         format = "%Y-%m-%d %H:%M:%S"
 
         tz = pytz.timezone('Europe/Amsterdam')
-        fe.pubDate(tz.localize(post[2]))
 #        tz = pytz.timezone('Asia/Kolkata')
 #        dateposted = post[2].astimezone(tz) 
 
@@ -96,6 +95,7 @@ def feed():
         fe.title(post[0])
         fe.description(post[0])
         fe.link(href='http://hivemined.net/' + str(post[4]))
+        fe.pubDate(tz.localize(post[2]))
 
 #        fe.pubdate(dateposted)
 #        fe.pubDate(dateposted)
