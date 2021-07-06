@@ -53,12 +53,12 @@ def post(post_id):
     data = mycursor.fetchall()
 
 
-    sql_stmt2 = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''),  levenshtein(substring('"+data[0][0]+"',0,255), substring(title,0,255)) as dist FROM openstatistics.rssitems WHERE (show_on_hivemined=1) ORDER BY dist ASC, time DESC LIMIT 10"
-    mycursor.execute(sql_stmt2)
-    data2= mycursor.fetchall()
+    #sql_stmt2 = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''),  levenshtein(substring('"+data[0][0]+"',0,255), substring(title,0,255)) as dist FROM openstatistics.rssitems WHERE (show_on_hivemined=1) ORDER BY dist ASC, time DESC LIMIT 10"
+    #mycursor.execute(sql_stmt2)
+    #data2= mycursor.fetchall()
     mycursor.close()
     conn.close()
-    return render_template('index.html', data=data, data2=data2, title="HiveMined - " +data[0][0], heading="HiveMined - The No-Nonsense Job Board")
+    return render_template('index.html', data=data,  title="HiveMined - " +data[0][0], heading="HiveMined - The No-Nonsense Job Board")
 
 
 
