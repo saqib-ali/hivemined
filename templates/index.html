@@ -21,9 +21,8 @@
 
     {% for row in data %}
         <a href="{{row[1]}}"><h2>{{row[0]}}</h2></a>
-		<p>shared by: </b><a href="https://twitter.com/{{row[3]}}"><b>{{row[3]}}</b></a>  on {{row[2]}}</p>
+		<p>shared by: </b><a href="https://twitter.com/{{row[3]}}"><b>{{row[3]}}</b></a>  on {{row[2]}}. <a href="{{row[4]}}"><small>permalink</small></a></p>
 		<p><a href="{{row[1]}}"><b>Apply here</b></a></p>
-		<p><a href="{{row[4]}}"><small>permalink</small></a></p>
 
     <hr/>
 
