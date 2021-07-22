@@ -63,7 +63,7 @@ def post(post_id):
 
 @app.route('/user/<user_id>')
 def usershares(user_id):
-    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: @', '') as twitter_user_id  FROM openstatistics.rssitems WHERE show_on_hivemined=1 AND starred=1 AND replace(twitter_user, 'H/T: @', '')=" + user_id
+    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: @', '') as twitter_user_id  FROM openstatistics.rssitems WHERE show_on_hivemined=1 AND starred=1 AND twitter_user LIKE '%" + user_id + "'"
 
     try:
         conn = psycopg2.connect(DBCONNSTR)
