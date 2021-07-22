@@ -82,7 +82,7 @@ def usershares(user_id):
 
 @app.route('/users')
 def users():
-    sql_stmt = "SELECT DISTINCT replace(twitter_user, 'H/T: @', '') as twitter_user_id  FROM openstatistics.rssitems WHERE show_on_hivemined=1 AND starred=1"
+    sql_stmt = "SELECT DISTINCT replace(twitter_user, 'H/T: @', '') as twitter_user_id  FROM openstatistics.rssitems WHERE show_on_hivemined=1 AND starred=1 ORDER BY TIME DESC"
 
     try:
         conn = psycopg2.connect(DBCONNSTR)
