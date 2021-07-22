@@ -20,8 +20,8 @@
 <a href="/">Home</a>
 
     {% for row in data %}
-        <a href="users/{{row[3]}}"><h2>{{row[3]}}</h2></a>
-    <hr/>
+        <p><a href="users/{{row[0]}}">Jobs shared by @{{row[0]}}</a></p>
+    
 
         {% endfor %}
 
