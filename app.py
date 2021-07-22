@@ -61,6 +61,26 @@ def post(post_id):
     return render_template('index.html', data=data,  title="HiveMined - " +data[0][0], heading="HiveMined - The No-Nonsense Job Board")
 
 
+@app.route('/user/<user_id>')
+def usershares(user_id):
+    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: @', '') as twitter_user_id  FROM openstatistics.rssitems WHERE show_on_hivemined=1 AND starred=1 AND twitter_user_id=" + user_id
+
+    try:
+        conn = psycopg2.connect(DBCONNSTR)
+        print("connected")
+    except Exception as e:
+        print (e)
+    mycursor =conn.cursor()
+    mycursor.execute(sql_stmt)
+    data = mycursor.fetchall()
+
+    mycursor.close()
+    conn.close()
+    return render_template('index.html', data=data,  title="HiveMined - Jobs Shared by " +data[0][3], heading="HiveMined - The No-Nonsense Job Board")
+
+
+
+
 
 @app.route('/feed')
 def feed():
