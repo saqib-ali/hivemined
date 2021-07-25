@@ -20,7 +20,7 @@ DBCONNSTR=os.environ['DBCONNSTR']
 
 @app.route('/')
 def index():
-    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''), rowid FROM openstatistics.rssitems WHERE show_on_hivemined=1 AND starred=1  ORDER BY TIME DESC LIMIT 10"
+    sql_stmt = "SELECT title, \"postUrl\", timestamp, replace(twitter_user, 'H/T: ', ''), rowid FROM openstatistics.rssitems WHERE show_on_hivemined=1 AND starred=1  ORDER BY TIME DESC LIMIT 100"
 
 
 
